@@ -1,0 +1,6 @@
+{
+  "name": "NatureLens",
+  "description": "A premium wildlife photography and species directory website showcasing breathtaking nature and conservation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
