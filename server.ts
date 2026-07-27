@@ -92,7 +92,7 @@ app.post("/api/ai/identify", async (req, res) => {
       : "Identify the animal, plant, or organism in this nature photograph. Provide detailed biological & field guide information in JSON format.";
 
     const response = await ai.models.generateContent({
-      model: "gemini-3.6-flash",
+      model: "gemini-2.5-flash",
       contents: {
         parts: [imagePart, { text: textPrompt }],
       },
@@ -164,7 +164,7 @@ app.post("/api/ai/chat", async (req, res) => {
     }
 
     const chat = ai.chats.create({
-      model: "gemini-3.6-flash",
+      model: "gemini-2.5-flash",
       config: {
         systemInstruction:
           "You are NatureLens AI Naturalist, an elite wildlife biologist, conservation scientist, and master nature photographer. Answer questions about animal behavior, plant taxonomy, ecology, tracking ethics, and camera settings with warmth, scientific accuracy, and engaging prose. Keep responses formatting structured with clear sections and bullet points where helpful.",
@@ -198,7 +198,7 @@ Provide editorial critique, recommended camera EXIF settings (aperture, shutter 
       : { parts: [{ text: promptText }] };
 
     const response = await ai.models.generateContent({
-      model: "gemini-3.6-flash",
+      model: "gemini-2.5-flash",
       contents,
       config: {
         responseMimeType: "application/json",
@@ -245,7 +245,7 @@ app.post("/api/ai/field-notes", async (req, res) => {
     const promptText = `Write an authentic, atmospheric field journal entry for an expedition observing ${speciesName} ${location ? `in ${location}` : ""}. Include expedition weather notes, behavioral observations, acoustic signals, threats, and field photography tips. Return as formatted JSON.`;
 
     const response = await ai.models.generateContent({
-      model: "gemini-3.6-flash",
+      model: "gemini-2.5-flash",
       contents: promptText,
       config: {
         responseMimeType: "application/json",
